@@ -1,5 +1,6 @@
 package bputman.example.myfirstapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -9,9 +10,11 @@ import android.view.View;
 import android.widget.EditText;
 
 
-public class MainActivity extends ActionBarActivity {
+//public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
 	public final static String EXTRA_MESSAGE = "bputman.example.myfirstapp.MESSAGE";
+	private static final String EXTRA_FLOATDATA = "bputman.example.myfirstapp.FLOATDATA";
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +46,21 @@ public class MainActivity extends ActionBarActivity {
 		// Do something in response to button click
     	Intent intent = new Intent(this, DisplayMessageActivity.class);
     	EditText editText = (EditText) findViewById(R.id.edit_message);
+    	
+    	// test convert input text into a float.
+    	//float test = Float.parseFloat(editText.getText().toString());
+    	//
     	String message = editText.getText().toString();
+    	//float[] f = new float[3];
+    	//f[0]=10f; f[1]=100f; f[2]=1000f;
     	intent.putExtra(EXTRA_MESSAGE, message);
+    	//intent.putExtra(EXTRA_FLOATDATA, f);
     	startActivity(intent);
 	}
+    
+//    public void updateImage(View view) {
+//    	Intent intent = new Intent(this, DisplayMessageActivity.class);
+//    	EditText e = (EditText) findViewById(R.id.seek_bar_freq);
+//    	
+//    }
 }

@@ -16,12 +16,12 @@ import android.widget.TextView;
 
 	// needs update
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_display_message);
+	protected void onCreate(Bundle savedInstanceState) {	    
+	    super.onCreate(savedInstanceState);
+		//setContentView(R.layout.activity_display_message);
 		
 		// Get the message from the intent
-		Intent intent = new Intent();
+		Intent intent = getIntent();
 		String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 		
 		// Create the text view
@@ -33,13 +33,13 @@ import android.widget.TextView;
 		setContentView(textView);
 	}
 
-	// not needed
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.display_message, menu);
-		return true;
-	}
+//	// not needed
+//	@Override
+//	public boolean onCreateOptionsMenu(Menu menu) {
+//		// Inflate the menu; this adds items to the action bar if it is present.
+//		getMenuInflater().inflate(R.menu.display_message, menu);
+//		return true;
+//	}
 
 	// no update needed
 	@Override
